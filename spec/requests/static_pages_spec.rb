@@ -4,6 +4,18 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+
+	describe "Contact" do
+		it "should have the content 'Contact'" do
+			visit '/static_pages/contact'
+			expect(page).to have_content('Contact')
+		end
+		it "shuld have the title 'Contact'" do
+			visit '/static_pages/contact'
+			expect(page).to have_title("Ruby on Rails Tutorial Sample App | Contact")
+		end
+	end 
+
   describe "Home Page" do
 
 		# BODY内に任意の文字列があるのかを確認する
@@ -17,7 +29,6 @@ describe "StaticPages" do
 		  visit '/static_pages/home'
 			expect(page).to have_title("Ruby on Rails Tutorial Sample App | Home")
 		end
-
 
 	end
 
